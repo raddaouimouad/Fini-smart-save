@@ -63,8 +63,12 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`\n🚀 FINI Backend running on http://localhost:${PORT}`);
-  console.log(`📊 Admin can access API at http://localhost:${PORT}/api/admin`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}\n`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 FINI Backend running on http://localhost:${PORT}`);
+    console.log(`📊 Admin can access API at http://localhost:${PORT}/api/admin`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}\n`);
+  });
+}
+
+module.exports = app;
