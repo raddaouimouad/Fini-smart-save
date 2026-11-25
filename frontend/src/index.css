@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-fini-border;
+  }
+  
+  body {
+    @apply bg-fini-navy text-fini-text antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-fini-navy;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-fini-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-fini-mint;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-fini-mint text-white font-semibold py-2.5 px-5 rounded-xl hover:bg-mint-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-fini-card text-fini-text font-semibold py-2.5 px-5 rounded-xl border border-fini-border hover:bg-fini-card-hover transition-all duration-200 disabled:opacity-50 flex items-center justify-center gap-2 text-sm;
+  }
+
+  .btn-danger {
+    @apply bg-red-600/20 text-red-400 font-semibold py-2.5 px-5 rounded-xl border border-red-600/30 hover:bg-red-600/30 transition-all duration-200 flex items-center justify-center gap-2 text-sm;
+  }
+
+  .btn-purple {
+    @apply bg-fini-purple text-white font-semibold py-2.5 px-5 rounded-xl hover:bg-purple-700 transition-all duration-200 flex items-center justify-center gap-2 text-sm;
+  }
+
+  .card {
+    @apply bg-fini-card border border-fini-border rounded-2xl p-5 shadow-lg;
+  }
+
+  .card-hover {
+    @apply card hover:bg-fini-card-hover hover:border-mint-500/30 transition-all duration-200 cursor-pointer;
+  }
+
+  .input {
+    @apply w-full bg-fini-navy border border-fini-border rounded-xl px-4 py-3 text-fini-text placeholder-fini-muted focus:outline-none focus:border-fini-mint focus:ring-1 focus:ring-fini-mint/30 transition-all text-sm;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-fini-muted mb-1.5;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center gap-1 bg-mint-500/10 text-mint-400 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+
+  .badge-purple {
+    @apply inline-flex items-center gap-1 bg-purple-500/10 text-purple-400 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+
+  .badge-yellow {
+    @apply inline-flex items-center gap-1 bg-yellow-500/10 text-yellow-400 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+
+  .badge-red {
+    @apply inline-flex items-center gap-1 bg-red-500/10 text-red-400 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1 bg-blue-500/10 text-blue-400 text-xs font-medium px-2.5 py-0.5 rounded-full;
+  }
+
+  .stat-card {
+    @apply card flex flex-col gap-3;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-fini-text;
+  }
+
+  .page-header {
+    @apply mb-6;
+  }
+
+  .progress-bar-bg {
+    @apply w-full bg-fini-border rounded-full overflow-hidden;
+  }
+
+  .tab-active {
+    @apply bg-fini-mint text-white font-semibold text-sm px-5 py-2 rounded-xl transition-all;
+  }
+
+  .tab-inactive {
+    @apply text-fini-muted font-medium text-sm px-5 py-2 rounded-xl hover:text-fini-text transition-all hover:bg-fini-card-hover;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-fini-muted hover:text-fini-text hover:bg-fini-card-hover transition-all duration-150;
+  }
+
+  .sidebar-link-active {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-fini-mint bg-mint-500/10 border border-mint-500/20;
+  }
+
+  .mobile-nav-link {
+    @apply flex flex-col items-center gap-1 text-fini-muted text-xs font-medium hover:text-fini-mint transition-colors;
+  }
+
+  .mobile-nav-link-active {
+    @apply flex flex-col items-center gap-1 text-fini-mint text-xs font-semibold;
+  }
+}
+
+/* Coin animation */
+.coin-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* QR Code placeholder */
+.qr-placeholder {
+  background: linear-gradient(135deg, #1c3454 25%, #152848 25%, #152848 50%, #1c3454 50%, #1c3454 75%, #152848 75%, #152848 100%);
+  background-size: 20px 20px;
+}

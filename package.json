@@ -1,0 +1,11 @@
+{
+  "name": "fini-ecosystem",
+  "version": "1.0.0",
+  "description": "FINI — Save. Play. Shop. Get rewarded. Complete Web Application",
+  "scripts": {
+    "dev:backend": "cd backend && npm start",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "build": "cd frontend && npm run build"
+  }
+}
